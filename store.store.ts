@@ -18,7 +18,7 @@ export const DataModelStore = signalStore(
         store.loadDataModel(dataModelIdToLoad);
       } else {
         store.createNewDataModel(null);
-        //store.loadReturnForm(draftRmaRequestToLoad);
+        //store.loadDataModel(dataModelIdToLoad);
       }
       // Load installers only if needed
       store.data.additionalDataRequired ?? store.loadAdditionalData(null);
