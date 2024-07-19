@@ -12,6 +12,20 @@ const removeProduct = (data: DeepSignal<DataModel>, productId: number): Partial<
 const getAddress = (data: DeepSignal<DataModel>, addressType: AddressTypeEnum): StoreModelState | undefined =>
   data().addresses.find(address => address.addressType === addressType);
 
+export const setAddressToDelete = (data: DeepSignal<DataModel>, addressType: AddressTypeEnum, addressId?: number): DataModel => {
+  const currentForm = data();
+  return {
+    ...currentForm,
+    addresses: currentForm.addresses.map(address => ({
+      ...address,
+      delete: address.addressType === addressType && (addressId === undefined || address.id === addressId),
+    })),
+  };
+};
+
+export const getAddress = (returnForm: DeepSignal<DataModel>, addressType: AddressTypeEnum): DataModel | undefined =>
+  data().addresses.find(address => address.addressType === addressType);
+
 
 // EXPORTS ---
 export const returnFormSetters = {
