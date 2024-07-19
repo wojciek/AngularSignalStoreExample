@@ -1,4 +1,4 @@
-# AngularSignalStoreExample
+# AngularSignalStoreExample based on @ngrx/signals
 Example implementation of angular signal store
 
 
