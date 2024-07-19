@@ -15,7 +15,7 @@ export function setPendingDataModel(): Partial<ModelStoreState> {
 }
 
 export function setSuccessDataModel(data: DataModel): Partial<ModelStoreState> {
-  return { ...baseSetSuccess(), data, draftRmaRequestId: returnForm.draftRmaRequestId };
+  return { ...baseSetSuccess(), data, id: data.id };
 }
 
 export function setErrorDataModel(error: string): Partial<ModelStoreState> {
